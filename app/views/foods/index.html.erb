@@ -1,0 +1,13 @@
+<h1> Idex PAge! </h1>
+
+<%= link_to "New Food Item",  new_food_path %>
+
+<% @foods.each do |food| %>
+
+	<li><%=link_to food.item, food_path(food.id) %>
+	<%= link_to "edit", edit_food_path(food[:id]) %>
+	<%= link_to "delete", food, method: :delete, date: {confirm: "You sure?"}%>
+	</li>
+
+
+	<% end %>
